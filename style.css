@@ -5,64 +5,151 @@
 }
 
 body {
-  background-color: aliceblue;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(13, 2, 31, 0.089), rgba(49, 10, 122, 0.2666666667)), url("https://images.steamusercontent.com/ugc/2030599791520003768/B488A18E136BC670E609B31A6EE29094A701CD13/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true") center/cover no-repeat;
+  z-index: -1;
 }
 
 main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
 }
 
 img {
   width: 40vw;
-  height: 45vh;
+  height: 46vh;
   max-width: 500px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .formulario {
+  background: rgba(78, 6, 141, 0.357);
+  box-shadow: 0 4px rgba(64, 0, 117, 0.534);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
   width: 40vw;
-  height: 45vh;
-  background-color: white;
   max-width: 500px;
+  padding: 2rem;
+  color: white;
   display: flex;
   flex-direction: column;
-  padding: 4rem;
+  gap: 1rem;
+  height: 46vh;
 }
-
-@media (max-width: 700px) {
-  img {
-    display: none;
-  }
+.formulario h1 {
+  text-align: center;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.205);
 }
-p {
-  padding-top: 1rem;
+.formulario p {
+  text-align: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
-
-input {
-  padding: 0.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.219);
+form label {
+  font-weight: 500;
+}
+form input {
+  padding: 0.8rem;
+  border: none;
   border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
   outline: none;
 }
-
-button {
-  background-color: aqua;
-  margin-top: 1rem;
-  padding: 1rem;
+form input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+form button {
+  width: 100%;
   border: none;
-  border-radius: 10px;
-  font-weight: 600;
+  color: #f8f2ec;
+  padding: 10px 10px;
+  margin-top: 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  background: linear-gradient(270deg, #5a38ee, #9148ff, #ad4ffa);
+  background-size: 200% 200%;
+  transition: background-position 0.5s ease, transform 0.2s ease;
   cursor: pointer;
 }
-button:hover {
-  background-color: rgb(0, 235, 235);
-  transition: 0.3s;
+form button:hover {
+  background-position: right center;
+}
+
+a {
+  color: #f8f2ec;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  img {
+    display: none;
+  }
+  .formulario {
+    width: 90vw;
+    height: auto;
+    padding: 1.5rem;
+    box-shadow: none;
+    border-radius: 15px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  input,
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+footer {
+  background-color: rgba(49, 10, 122, 0.2666666667);
+  color: white;
+  text-align: center;
+  align-items: center;
+  padding: 1.8%;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1%;
+}
+ul a {
+  color: white;
+}
+ul li {
+  list-style: none;
 }/*# sourceMappingURL=style.css.map */
